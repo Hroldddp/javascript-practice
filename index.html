@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: black;
+                font-family: Arial;
+                color: white;
+
+                box-sizing: border-box;
+                padding: 30px;
+                margin: 0px;
+            }
+
+            button {
+                border-radius: 30px;
+                border: transparent;
+                width: 100px;
+                height: 50px;
+                cursor: pointer;
+
+                font-size: 15px;
+            }
+
+            button:hover {
+                background-color: grey;
+                color: white;
+
+                transition: 0.5s all;
+            }
+        </style>
+        <title>JS Practice</title>
+    </head>
+    <body>
+        <h3 id="result">Amount: 0</h3>
+       <button onclick="add()">Add</button>
+       <button onclick="add2()">Add 2</button>
+       <button onclick="remove()">Remove 1</button>
+       <button onclick="reset()">Reset</button>
+       <script>
+        let amount = 0;
+        function add() {
+            document.getElementById("result").innerHTML = `Amount: ${amount + 1}`;
+            amount = amount + 1;
+        }
+
+        function add2() {
+            document.getElementById("result").innerHTML = `Amount: ${amount + 2}`;
+            amount = amount + 2;
+        }
+
+        function remove() {
+            amount = amount - 1;
+            if (amount > 0) {
+                document.getElementById("result").innerHTML = `Amount: ${amount}`;
+            }
+
+            else if (amount <= 0) {
+                amount = 0;
+                document.getElementById("result").innerHTML = `Amount: ${amount}`;
+            }
+        }
+
+        function reset() {
+            amount = 0;
+            document.getElementById("result").innerHTML = `Amount: ${amount}`;
+        }
+       </script>
+    </body>
+</html>
